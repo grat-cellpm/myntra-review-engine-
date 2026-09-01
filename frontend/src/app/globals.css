@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #171923;
+  --foreground: #f8fafc;
+  --panel-bg: #222635;
+  --sidebar-bg: #1a1d27;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* UI Components & Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-[#222635] border border-white/5 rounded-2xl shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-[#222635] border border-slate-700/50 hover:border-pink-500/30 transition-all duration-300 rounded-xl shadow-lg;
+  }
+  
+  .glass-input {
+    @apply bg-[#1a1d27] border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-pink-500/50 text-white placeholder-slate-400;
+  }
+  
+  .glass-button {
+    @apply bg-gradient-to-r from-[#F34C74] to-[#F88B46] hover:opacity-90 text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-white shadow-lg shadow-pink-500/20;
+  }
+  
+  .glass-button-outline {
+    @apply border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400;
+  }
+  
+  .brand-gradient {
+    @apply bg-gradient-to-r from-[#F34C74] to-[#F88B46];
+  }
+  
+  .brand-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F34C74] to-[#F88B46];
+  }
+}
