@@ -60,7 +60,8 @@ export default function Explorer() {
   });
 
   React.useEffect(() => {
-    fetch('http://localhost:5000/api/reviews')
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    fetch(`${apiUrl}/api/reviews`)
       .then(res => res.json())
       .then(data => {
         if (data && data.length > 0) {

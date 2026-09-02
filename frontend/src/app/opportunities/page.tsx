@@ -27,7 +27,8 @@ export default function OpportunitiesPage() {
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/opportunities')
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    fetch(`${apiUrl}/api/opportunities`)
       .then(res => res.json())
       .then(data => {
         setOpportunities(data);
