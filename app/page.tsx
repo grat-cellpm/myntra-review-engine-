@@ -124,11 +124,11 @@ export default function Dashboard() {
                   contentStyle={{ backgroundColor: '#1a1d27', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: '#fff', boxShadow: '0 8px 30px rgba(0,0,0,0.5)' }}
                   itemStyle={{ color: '#fff' }}
                 />
-                <Bar dataKey="value" radius={[0, 8, 8, 0]} background={{ fill: 'rgba(255,255,255,0.03)', radius: [0, 8, 8, 0] }}>
+                <Bar dataKey="value" radius={[0, 8, 8, 0] as any} background={{ fill: 'rgba(255,255,255,0.03)', radius: [0, 8, 8, 0] as any }}>
                   {renderData.topBarriers.map((entry: any, index: number) => (
                     <Cell key={`cell-${index}`} fill={`url(#orangePink)`} />
                   ))}
-                  <LabelList dataKey="value" position="insideRight" formatter={(val: number) => `${val}`} fill="#f8fafc" fontSize={12} offset={10} />
+                  <LabelList dataKey="value" position="insideRight" formatter={(val: any) => `${val}`} fill="#f8fafc" fontSize={12} offset={10} />
                 </Bar>
                 <defs>
                   <linearGradient id="orangePink" x1="0" y1="0" x2="1" y2="0">
