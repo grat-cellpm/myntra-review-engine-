@@ -1,4 +1,2 @@
 backend/.env
-*.db
-*.pkl
 __pycache__/
