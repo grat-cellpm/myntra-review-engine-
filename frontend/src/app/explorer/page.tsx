@@ -52,8 +52,8 @@ export default function Explorer() {
     const reviewSentiment = review.sentiment ? review.sentiment.toLowerCase() : 'neutral';
     const matchesSentiment = sentimentFilter === 'All Sentiments' || reviewSentiment === sentimentFilter.toLowerCase();
     
-    const oppFilterNormalized = opportunityFilter === 'Opportunity Area' ? '' : opportunityFilter.toLowerCase().replace(' issue', '');
-    const reviewArea = review.area ? review.area.toLowerCase() : '';
+    const oppFilterNormalized = opportunityFilter === 'Opportunity Area' ? '' : opportunityFilter.toLowerCase().replace(' issue', '').replace(' point', '');
+    const reviewArea = (review.barrier || review.area || '').toLowerCase();
     const matchesOpportunity = oppFilterNormalized === '' || reviewArea.includes(oppFilterNormalized);
     
     return matchesSearch && matchesSentiment && matchesOpportunity;
